@@ -9,7 +9,7 @@ Talks
 
 **Breaking bridges** by Yoav Weiss, EF [video](https://youtu.be/umV-wcKlpjg?t=27768), [slides](https://drive.google.com/file/d/1GpSEeFe0xmC4WlOA8mm4JSgRnTEiyiTX/view)
 
-Real hacks
+Hacks Reproduced
 ===================
 
 The below table shows known hacks since 2021:
