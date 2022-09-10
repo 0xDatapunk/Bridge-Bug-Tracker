@@ -1,4 +1,4 @@
-# Comilation of Hacks/Vulns/Audits On Ethereum Bridges-L2s
+# Compilation of Hacks/Vulns/Audits On Ethereum Bridges-L2s
 Talks
 ===================
 **Securing a Cross-Chain Bridge** by Christopher Whinfrey, hop protocol [video](https://youtu.be/umV-wcKlpjg?t=24940), [slides](https://drive.google.com/file/d/1NEhABFJVt6hGGuvRrohbxnWQ442i2DO8/view)
@@ -14,7 +14,7 @@ Hacks Reproduced
 
 The below table shows known hacks since 2021:
 
-| Date  | Protocol | Fund At Risk | Root Cause | References | Code to Reproduce |
+| Date  | Protocol | Funds At Risk | Root Cause | References | Code to Reproduce |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 20220802 | [Nomad](https://docs.nomad.xyz/nomad-101/introduction)  | $152M | `acceptableRoot[address(0)] == true` | [twitter](https://twitter.com/samczsun/status/1554252024723546112) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/NomadBridge.exp.sol) |
 | 20220624 | [Harmony's Horizon](https://docs.harmony.one/home/general/introduction/what-is-harmony) | $100M | Private key compromised | [twitter](https://twitter.com/0xIvo/status/1540165571681128448) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/Harmony_multisig.sol) |
