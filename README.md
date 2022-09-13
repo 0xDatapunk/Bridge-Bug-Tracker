@@ -30,6 +30,8 @@ The below table shows known hacks since 2021:
 
 Confirmed Bug Bounties
 ===========================
+[Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/postmortems)
 
 Audits
 ===========================
+[Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/audits)
