@@ -13,7 +13,7 @@ Hacks Reproduced
 ===================
 
 Inline-style: 
-![alt text][Logo Title  \n\n Text 1]
+[Another text][another-identifier] will do the same. Hover the mouse over it to see the title.
 
 The below table shows known hacks since 2021:
 
