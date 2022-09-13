@@ -13,7 +13,9 @@ Hacks Reproduced
 ===================
 
 Inline-style: 
-[Another text][another-identifier] will do the same. Hover the mouse over it to see the title.
+
+[Another text](another-identifier) will do the same. Hover the mouse over it to see the title.
+
 *[HTML]: Hyper Text Markup Language
 The HTML specification
 
