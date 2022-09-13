@@ -13,7 +13,7 @@ Hacks Reproduced
 ===================
 
 Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title \n\n Text 1")
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title  \n\n Text 1")
 
 The below table shows known hacks since 2021:
 
