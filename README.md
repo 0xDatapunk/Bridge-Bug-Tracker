@@ -12,6 +12,9 @@ Talks
 Hacks Reproduced
 ===================
 
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title \ Text 1")
+
 The below table shows known hacks since 2021:
 
 | Date  | Protocol | Funds At Risk | Root Cause | References | Code to Reproduce |
