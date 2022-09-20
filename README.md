@@ -1,29 +1,30 @@
 # Compilation of Hacks/Vulns/Audits On Ethereum Bridges-L2s
-Different ways to go wrong
+Different ways to go wrong 
 ===================
-● The Custodian
-○ Incorrect asset amount released with respect to the burnt tokens
-○ Assets released despite the debt token has not been burnt
-○ Asset transaction replay for a single burn transaction
+### from [Quantstamp](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
+- The Custodian
+  - Incorrect asset amount released with respect to the burnt tokens
+  - Assets released despite the debt token has not been burnt
+  - Asset transaction replay for a single burn transaction
 
-● The Debt Issuer
-○ Incorrect amount of debt issued with respect to the deposited assets
-○ Debt token issued although the actual verification did not take place
-○ Anybody can issue debt tokens
+- The Debt Issuer
+  - Incorrect amount of debt issued with respect to the deposited assets
+  - Debt token issued although the actual verification did not take place
+  - Anybody can issue debt tokens
 
-● The Communicator
-○ Issues debt tokens although no assets have been deposited
-○ Issues no debt tokens although assets have been deposited
-○ Accepts fraudulent messages from a fake custodian or a debt issuer
-○ Does not relay messages
-○ The source contract does not emit events upon deposit/withdrawal
+- The Communicator
+  - Issues debt tokens although no assets have been deposited
+  - Issues no debt tokens although assets have been deposited
+  - Accepts fraudulent messages from a fake custodian or a debt issuer
+  - Does not relay messages
+  - The source contract does not emit events upon deposit/withdrawal
 
-● The Interface (could be fixed with "revoke approval")
-○ Deposit from another account
-○ Execute any calls from any contract
+- The Interface (could be fixed with "revoke approval")
+  - Deposit from another account
+  - Execute any calls from any contract
 
-● The Network
-○ 51% attack
+- The Network
+  - 51% attack
 
 
 Talks
