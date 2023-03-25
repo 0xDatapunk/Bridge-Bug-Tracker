@@ -1,4 +1,9 @@
 # Compilation of Hacks/Vulns/Audits On Ethereum Bridges-L2s
+
+The Current State of Layer 2 Bridges
+===================
+https://entethalliance.org/2023-02-28-state-of-l2-bridges/
+
 Different ways to go wrong 
 ===================
 ### from [Quantstamp](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
