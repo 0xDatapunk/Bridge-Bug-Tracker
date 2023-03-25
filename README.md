@@ -1,7 +1,8 @@
-# Compilation of Hacks/Vulns/Audits On Ethereum Bridges-L2s
+# Compilation of Hacks/Vulns/Audits On Ethereum L2/Bridges
 
-The Current State of Layer 2 Bridges
+The Current State of Layer2/Bridges
 ===================
+https://l2beat.com/scaling/tvl
 https://entethalliance.org/2023-02-28-state-of-l2-bridges/
 
 Different ways to go wrong 
