@@ -83,8 +83,9 @@ Audits
 
 <details><summary>5 Highs </summary>
   
-  1. [Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
-  2. [Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
+  1. [Due to additional operations between gas check and gas use, malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/109) 
+  2. [Due to forwarded gas being silently reduced if exceeding 63/64th of total gasleft(), withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
+  3. [Causing users lose their fund during finalizing withdrawal transaction](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
 </details>   
 <details><summary> 13 Mediums </summary>  
   
