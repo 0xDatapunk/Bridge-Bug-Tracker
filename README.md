@@ -79,4 +79,7 @@ Confirmed Bug Bounties
 
 Audits
 ===========================
+| Date  | Protocol | References | Vuln | Exploit |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+
 [Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/audits)
