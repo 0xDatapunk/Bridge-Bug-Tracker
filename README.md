@@ -88,7 +88,7 @@ Audits
   3. [Due to presence of reentrancy guard on the function relayMessage, a malicious user can make users lose their fund during finalizing their withdrawal](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
 </details>   
   
-<details><summary> 11 Mediums </summary>  
+<details><summary> 10 Mediums </summary>  
   
   1. [Due to not checking the value of is_last, batcher frames are incorrectly decoded leading to consensus split (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/279) 
   2. [Due to MAX_RESOURCE_LIMIT, censorship resistance is undermined and bridging of assets can be DOSed at low cost](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/277)
@@ -99,6 +99,7 @@ Audits
   7. [Migration can be bricked by sending a message directly to the LegacyMessagePasser (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/105)
   8. [Challenger can delete a l2Output which is older than 7 days meaning withdrawals will stop working for even confirmed transaction](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/75)
   9. [Since depositTransaction does not enforce minimum gas limit, it is costly to the sequencer to process thess txs without compensation](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/71)
-  10. 
+  10. [Deposits from L1 to L2 using L1CrossDomainMessenger will fail and will not be replayable when L2CrossDomainMessenger is paused](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/57)
+  11. [Due to the requirement that reproving can only be done on the same L2 block number, withdrawal transactions can get stuck if output root is reproposed](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/53)
 </details>
 
