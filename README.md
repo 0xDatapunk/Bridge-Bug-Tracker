@@ -103,3 +103,11 @@ Audits
   11. [Due to the requirement that reproving can only be done on the same L2 block number, withdrawal transactions can get stuck if output root is reproposed](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/53)
 </details>
 
+### 2022-10-28 zkSync V2 - [C4](https://app.sherlock.xyz/audits/contests/63) - [report](https://code4rena.com/reports/2022-10-zksync)
+  
+
+<details><summary>2 Mediums </summary>
+  
+  1. [diamondCut is not protected in case of governor’s key leakage](https://github.com/code-423n4/2022-10-zksync-findings/issues/46) 
+  2. [BLOCK_PERIOD should be set to 12 secs instead of 13, which results in a transaction in the Priority Queue incorrectly expires 5.5 hours earlier than expected.](https://github.com/code-423n4/2022-10-zksync-findings/issues/259)
+</details>  
