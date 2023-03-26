@@ -81,6 +81,6 @@ Audits
 ===========================
 | Auditor/Platform  | Protocol | References | Severity | Summary |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Sherlock | [Optimism Bedrock](https://app.sherlock.xyz/audits/contests/63) | [report](https://app.sherlock.xyz/audits/contests/38) | H | |
+| Sherlock | [Optimism Bedrock](https://app.sherlock.xyz/audits/contests/63) | [report](https://app.sherlock.xyz/audits/contests/38) | H | <details><summary>delegateCall to precompiles</summary>In the exit to NEAR and exit to Ethereum precompiles, the contract address was hardcoded with disregard to how DelegateCall works. When someone calls the contract it comes from the address of the contract always, and not from the input. Also, since the balance is from the EOA and not the contract, there is no transfer of ETH. This results in the Aurora Engine scheduling a transfer from its NEP-141 ETH balance to the adversary while it has not received an ETH transfer.</detail> | Instead of removing the hardcoded contract address, given context, it turned out to be better to instead return an exit error if the address given does not match the inputs' address. |
   *sfdda*
 [Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/audits)
