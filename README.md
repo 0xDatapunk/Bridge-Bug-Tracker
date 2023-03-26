@@ -74,39 +74,21 @@ Confirmed Bug Bounties
 | Date  | Protocol | References | Vuln | Exploit |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 20220919 | [Arbitrum](https://developer.arbitrum.io/)  | [twitter](https://twitter.com/0xriptide/status/1572051111246467074)<br>[medium](https://medium.com/@0xriptide/hackers-in-arbitrums-inbox-ca23272641a2) | <details><summary>`postUpgradeInit` function wipes slots 0,1 & 2 and sets the bridge and allowListEnabled slots to new values — but leaves sequencerInbox and the two booleans set by the intializer modifier empty.</summary>*call the public initialize() function and set our own address as the bridge to accept all incoming ETH deposits … but only because of this gas optimization in the code from a month prior.*</detail> | Once initialized the contact with our own bridge contract address, we can hijack all incoming ETH deposits from users attempting to bridge to Arbitrum via the depositEth() function | 
-| 20220607 | [Aurora](https://doc.aurora.dev/) | [blog](https://aurora.dev/blog/aurora-mitigates-its-inflation-vulnerability), [immunefi](https://medium.com/immunefi/aurora-infinite-spend-bugfix-review-6m-payout-e635d24273d#b405), [source](https://github.com/aurora-is-near/aurora-engine/blob/5c8691ea6ea5f1b309ef227f7f5c719ffea45d28/engine-precompiles/src/native.rs#L198), [disclosure](https://app.ardrive.io/#/drives/7ba902d8-d26a-4dad-99b8-807eaaf8d925/folders/c63e6e8b-0d66-4018-b5ac-e93afe948d46) | <details><summary>delegateCall to precompiles</summary>In the exit to NEAR and exit to Ethereum precompiles, the contract address was hardcoded with disregard to how DelegateCall works. When someone calls the contract it comes from the address of the contract always, and not from the input. Also, since the balance is from the EOA and not the contract, there is no transfer of ETH. This results in the Aurora Engine scheduling a transfer from its NEP-141 ETH balance to the adversary while it has not received an ETH transfer.</detail> | Instead of removing the hardcoded contract address, given context, it turned out to be better to instead return an exit error if the address given does not match the inputs' address. |
-| 20220202 | [Optimism](https://www.optimism.io/)  | [github](https://github.com/ethereum-optimism/optimism/blob/develop/technical-documents/postmortems/2022-02-02-inflation-vuln.md)<br>[writeup](https://www.saurik.com/optimism.html) | <details><summary>The code for Suicide is directly modifying the stateObject's data.Balance field instead of checking UsingOVM and redirecting that modification to OVM_ETH<details><summary> | Contract balances were improperly zeroed during self-destruction, so that the contract address would still have a balance after it had been self-destructed. This could have enabled an attacker to run a loop which doubled the balance of a contract each time, resulting in massive inflation and issuance directly to the attacker. | 
+| 20220607 | [Aurora](https://doc.aurora.dev/) | [blog](https://aurora.dev/blog/aurora-mitigates-its-inflation-vulnerability), [immunefi](https://medium.com/immunefi/aurora-infinite-spend-bugfix-review-6m-payout-e635d24273d#b405), [source](https://github.com/aurora-is-near/aurora-engine/blob/5c8691ea6ea5f1b309ef227f7f5c719ffea45d28/engine-precompiles/src/native.rs#L198), [disclosure](https://app.ardrive.io/#/drives/7ba902d8-d26a-4dad-99b8-807eaaf8d925/folders/c63e6e8b-0d66-4018-b5ac-e93afe948d46) | <details><summary>delegateCall to precompiles</summary>*In the exit to NEAR and exit to Ethereum precompiles, the contract address was hardcoded with disregard to how DelegateCall works. When someone calls the contract it comes from the address of the contract always, and not from the input. Also, since the balance is from the EOA and not the contract, there is no transfer of ETH. This results in the Aurora Engine scheduling a transfer from its NEP-141 ETH balance to the adversary while it has not received an ETH transfer.*</detail> | Instead of removing the hardcoded contract address, given context, it turned out to be better to instead return an exit error if the address given does not match the inputs' address. |
+| 20220202 | [Optimism](https://www.optimism.io/)  | [github](https://github.com/ethereum-optimism/optimism/blob/develop/technical-documents/postmortems/2022-02-02-inflation-vuln.md)<br>[writeup](https://www.saurik.com/optimism.html) | <details><summary>The code for Suicide is directly modifying the stateObject's data.Balance field instead of checking UsingOVM and redirecting that modification to OVM_ETH</summary></details> | Contract balances were improperly zeroed during self-destruction, so that the contract address would still have a balance after it had been self-destructed. This could have enabled an attacker to run a loop which doubled the balance of a contract each time, resulting in massive inflation and issuance directly to the attacker. | 
 
 Audits
 ===========================
-| Auditor/Platform  | Protocol | References | Severity | Summary |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| <details><summary>Sherlock <>|</> [Optimism Bedrock](https://app.sherlock.xyz/audits/contests/63) | [report](https://app.sherlock.xyz/audits/contests/38) | H1 | ||</summary>
-Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds 
-| | | | H2 | Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds |</details>
-
-
-[Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/audits)
-
-
-<details><summary>Open to view Data Dictionary</summary>
-
-|Feature|Format|Type|Description|
-|---|---|---|---|
-|**Id**|*integer*|Nominal|Identifier for each property.|
-|**PID**|*integer*|Nominal|Parcel identification number - can be usedwith city web site for parcel review.|
-|**MS SubClass**|*integer*|Nominal|Identifies the type of dwellinginvolved in the sale. Type is coded, please refer to full datadocumentation|
-|**MS Zoning**|*string*|Nominal|Identifies the general zoningclassification of the sale.|
+### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
+ <details><summary> 5 Highs </summary>
+   
+   1. [Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
+   2. [Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
+</details>   
+   
+<details><summary> 13 Mediums </summary>
+  
+   1. Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds 
+   2. Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds |
 </details>
 
-[details="Summary"]
-This text will be hidden
-[/details]
-
-<details>
-    <summary>Click to expand!</summary>
-    
-    |    | UK0   |
-    |---:|:------|
-    |  0 | int64 |
-</details>
