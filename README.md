@@ -92,5 +92,7 @@ Audits
   
   1. [Due to not checking the value of is_last, batcher frames are incorrectly decoded leading to consensus split](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/279) 
   2. [Due to MAX_RESOURCE_LIMIT, censorship resistance is undermined and bridging of assets can be DOSed at low cost](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/277)
+  3. [When decoding a deposit transaction JSON string without the "gas" field, a panic/runtime error is triggered due to a nil pointer dereference](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/276)
+  4. 
 </details>
 
