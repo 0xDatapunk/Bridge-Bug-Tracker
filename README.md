@@ -82,10 +82,12 @@ Audits
 ### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
 
 <details><summary>5 Highs </summary>
+  
   1. [Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
   2. [Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
 </details>   
 <details><summary> 13 Mediums </summary>  
+  
   1. Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds 
   2. Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds |
 </details>
