@@ -88,7 +88,7 @@ Audits
   3. [Due to presence of reentrancy guard on the function relayMessage, a malicious user can make users lose their fund during finalizing their withdrawal](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
 </details>   
   
-<details><summary> 10 Mediums </summary>  
+<details><summary> 11 Mediums </summary>  
   
   1. [Due to not checking the value of is_last, batcher frames are incorrectly decoded leading to consensus split (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/279) 
   2. [Due to MAX_RESOURCE_LIMIT, censorship resistance is undermined and bridging of assets can be DOSed at low cost](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/277)
