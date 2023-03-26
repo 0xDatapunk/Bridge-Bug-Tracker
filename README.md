@@ -88,11 +88,17 @@ Audits
   3. [Due to presence of reentrancy guard on the function relayMessage, a malicious user can make users lose their fund during finalizing their withdrawal](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
 </details>   
   
-<details><summary> 13 Mediums </summary>  
+<details><summary> 11 Mediums </summary>  
   
-  1. [Due to not checking the value of is_last, batcher frames are incorrectly decoded leading to consensus split](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/279) 
+  1. [Due to not checking the value of is_last, batcher frames are incorrectly decoded leading to consensus split (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/279) 
   2. [Due to MAX_RESOURCE_LIMIT, censorship resistance is undermined and bridging of assets can be DOSed at low cost](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/277)
-  3. [When decoding a deposit transaction JSON string without the "gas" field, a panic/runtime error is triggered due to a nil pointer dereference](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/276)
-  4. 
+  3. [When decoding a deposit transaction JSON string without the "gas" field, a panic/runtime error is triggered due to a nil pointer dereference (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/276)
+  4. [Due to incorrect gas factor of 16 instead of 4 for 0 value bytes, MigrateWithdrawal() may set gas limit so high for old withdrawals when migrating them by mistake and they can't be relayed in the L1 and users funds would be lost (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/235)
+  5. [Due to missing function, contract with only IOptimismMintableERC20 interface is not compatible with StandardBridge](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/220)
+  6. [Due to small size of the blockHeightLRU, attacker can replay blocks and eclipses a node from the P2P network (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/177)
+  7. [Migration can be bricked by sending a message directly to the LegacyMessagePasser (.go)](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/105)
+  8. [Challenger can delete a l2Output which is older than 7 days meaning withdrawals will stop working for even confirmed transaction](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/75)
+  9. [Since depositTransaction does not enforce minimum gas limit, it is costly to the sequencer to process thess txs without compensation](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/71)
+  10. 
 </details>
 
