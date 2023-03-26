@@ -87,9 +87,10 @@ Audits
   2. [Due to forwarded gas being silently reduced if exceeding 63/64th of total gasleft(), withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
   3. [Due to presence of reentrancy guard on the function relayMessage, a malicious user can make users lose their fund during finalizing their withdrawal](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
 </details>   
+  
 <details><summary> 13 Mediums </summary>  
   
-  1. Malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds 
-  2. Withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds |
+  1. [Due to not checking the value of is_last, batcher frames are incorrectly decoded leading to consensus split](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/279) 
+  2. [Due to MAX_RESOURCE_LIMIT, censorship resistance is undermined and bridging of assets can be DOSed at low cost](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/277)
 </details>
 
