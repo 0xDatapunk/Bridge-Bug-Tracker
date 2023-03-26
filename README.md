@@ -79,7 +79,8 @@ Confirmed Bug Bounties
 
 Audits
 ===========================
-| Date  | Protocol | References | Vuln | Exploit |
+| Auditor/Platform  | Protocol | References | Severity | Summary |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-
+| Sherlock | [Optimism Bedrock](https://app.sherlock.xyz/audits/contests/63) | [report](https://app.sherlock.xyz/audits/contests/38) | H | |
+  *sfdda*
 [Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/audits)
