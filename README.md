@@ -81,11 +81,11 @@ Audits
 ===========================
 ### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
 
-<details><summary>5 Highs </summary>
+<details><summary>3 Highs </summary>
   
   1. [Due to additional operations between gas check and gas use, malicious user can finalize other’s withdrawal with less than specified gas limit, leading to loss of funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/109) 
   2. [Due to forwarded gas being silently reduced if exceeding 63/64th of total gasleft(), withdrawals with high gas limits can be bricked by a malicious user, permanently locking funds](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/96) 
-  3. [Causing users lose their fund during finalizing withdrawal transaction](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
+  3. [Due to presence of reentrancy guard on the function relayMessage, a malicious user can make users lose their fund during finalizing their withdrawal](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/87)
 </details>   
 <details><summary> 13 Mediums </summary>  
   
