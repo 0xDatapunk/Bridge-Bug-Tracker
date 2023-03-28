@@ -113,7 +113,7 @@ Audits
 </details>  
 
 ### 2022-12-15 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/ConnextNxtp-Spearbit-Security-Review.pdf)
-15 Highs
-19 Mediems
+15 Highs, 19 Mediems
 
-
+### 2022-08-30 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
+4 Critical, 16 Highs, 20 Mediums
