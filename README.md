@@ -48,6 +48,10 @@ Talks
 
 **Breaking bridges** by Yoav Weiss, EF [video](https://youtu.be/umV-wcKlpjg?t=27768), [slides](https://drive.google.com/file/d/1GpSEeFe0xmC4WlOA8mm4JSgRnTEiyiTX/view)
 
+**The Bridge Risk Framework Seminar** by Spearbit, [video](https://www.youtube.com/watch?v=JVNgsmEc5Lk), [blog](https://gov.l2beat.com/t/l2bridge-risk-framework/31)
+
+**Bridge Security** by Spearbit, [intro](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityIntroduction.md), [checklist](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityChecklist.md)
+
 Hacks Reproduced
 ===================
 
@@ -77,7 +81,7 @@ Confirmed Bug Bounties
 | 20220607 | [Aurora](https://doc.aurora.dev/) | [blog](https://aurora.dev/blog/aurora-mitigates-its-inflation-vulnerability), [immunefi](https://medium.com/immunefi/aurora-infinite-spend-bugfix-review-6m-payout-e635d24273d#b405), [source](https://github.com/aurora-is-near/aurora-engine/blob/5c8691ea6ea5f1b309ef227f7f5c719ffea45d28/engine-precompiles/src/native.rs#L198), [disclosure](https://app.ardrive.io/#/drives/7ba902d8-d26a-4dad-99b8-807eaaf8d925/folders/c63e6e8b-0d66-4018-b5ac-e93afe948d46) | <details><summary>delegateCall to precompiles</summary>*In the exit to NEAR and exit to Ethereum precompiles, the contract address was hardcoded with disregard to how DelegateCall works. When someone calls the contract it comes from the address of the contract always, and not from the input. Also, since the balance is from the EOA and not the contract, there is no transfer of ETH. This results in the Aurora Engine scheduling a transfer from its NEP-141 ETH balance to the adversary while it has not received an ETH transfer.*</detail> | Instead of removing the hardcoded contract address, given context, it turned out to be better to instead return an exit error if the address given does not match the inputs' address. |
 | 20220202 | [Optimism](https://www.optimism.io/)  | [github](https://github.com/ethereum-optimism/optimism/blob/develop/technical-documents/postmortems/2022-02-02-inflation-vuln.md)<br>[writeup](https://www.saurik.com/optimism.html) | <details><summary>The code for Suicide is directly modifying the stateObject's data.Balance field instead of checking UsingOVM and redirecting that modification to OVM_ETH</summary></details> | Contract balances were improperly zeroed during self-destruction, so that the contract address would still have a balance after it had been self-destructed. This could have enabled an attacker to run a loop which doubled the balance of a contract each time, resulting in massive inflation and issuance directly to the attacker. | 
 
-Audits
+Selected Audits
 ===========================
 ### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
 
@@ -103,8 +107,11 @@ Audits
   11. [Due to the requirement that reproving can only be done on the same L2 block number, withdrawal transactions can get stuck if output root is reproposed](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/53)
 </details>
 
-### 2022-10-28 zkSync V2 - [C4](https://app.sherlock.xyz/audits/contests/63) - [report](https://code4rena.com/reports/2022-10-zksync)
+
+### 2022-12-15 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/ConnextNxtp-Spearbit-Security-Review.pdf)
+15 Highs, 19 Mediems
   
+### 2022-10-28 zkSync V2 - [C4](https://app.sherlock.xyz/audits/contests/63) - [report](https://code4rena.com/reports/2022-10-zksync)
 
 <details><summary>2 Mediums </summary>
   
@@ -112,8 +119,15 @@ Audits
   2. [BLOCK_PERIOD should be set to 12 secs instead of 13, which results in a transaction in the Priority Queue incorrectly expires 5.5 hours earlier than expected.](https://github.com/code-423n4/2022-10-zksync-findings/issues/259)
 </details>  
 
-### 2022-12-15 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/ConnextNxtp-Spearbit-Security-Review.pdf)
-15 Highs, 19 Mediems
-
+### 2022-10-18 LI.FI - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/LIFI-Spearbit-Security-Review.pdf)
+8 Highs, 19 Mediums  
+  
+### 2022-10-04 optimismDrippie - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
+1 Medium
+  
 ### 2022-08-30 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
 4 Critical, 16 Highs, 20 Mediums
+
+
+  
+
