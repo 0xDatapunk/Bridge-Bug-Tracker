@@ -107,8 +107,7 @@ Selected Audits
   11. [Due to the requirement that reproving can only be done on the same L2 block number, withdrawal transactions can get stuck if output root is reproposed](https://github.com/sherlock-audit/2023-01-optimism-judging/issues/53)
 </details>
 
-
-### 2022-12-15 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/ConnextNxtp-Spearbit-Security-Review.pdf)
+### 2022-12-15 connext - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/ConnextNxtp-Spearbit-Security-Review.pdf)
 15 Highs, 19 Mediems
   
 ### 2022-10-28 zkSync V2 - [C4](https://app.sherlock.xyz/audits/contests/63) - [report](https://code4rena.com/reports/2022-10-zksync)
@@ -119,15 +118,19 @@ Selected Audits
   2. [BLOCK_PERIOD should be set to 12 secs instead of 13, which results in a transaction in the Priority Queue incorrectly expires 5.5 hours earlier than expected.](https://github.com/code-423n4/2022-10-zksync-findings/issues/259)
 </details>  
 
-### 2022-10-18 LI.FI - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/LIFI-Spearbit-Security-Review.pdf)
+### 2022-10-18 LI.FI - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/LIFI-Spearbit-Security-Review.pdf)
 8 Highs, 19 Mediums  
   
-### 2022-10-04 optimismDrippie - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
+### 2022-10-17 Connext Amarok - [C4](https://code4rena.com/contests/2022-06-connext-amarok-contest) - [report](https://code4rena.com/reports/2022-06-connext)  
+  
+  
+### 2022-10-04 optimismDrippie - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
 1 Medium
   
-### 2022-08-30 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
+### 2022-08-30 Connext - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
 4 Critical, 16 Highs, 20 Mediums
 
-
+### 2022-05-05 LI.FI - [C4](https://code4rena.com/contests/2022-03-lifi-contest) - [report](https://code4rena.com/reports/2022-03-lifinance)
+2 Highs, 13 Mediums
   
-
+### 2021-08-30 Connext - [C4](https://code4rena.com/contests/2021-07-connext-contest) - [report](https://code4rena.com/reports/2021-07-connext)
