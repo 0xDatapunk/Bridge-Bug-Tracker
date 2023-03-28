@@ -111,3 +111,9 @@ Audits
   1. [diamondCut is not protected in case of governor’s key leakage](https://github.com/code-423n4/2022-10-zksync-findings/issues/46) 
   2. [BLOCK_PERIOD should be set to 12 secs instead of 13, which results in a transaction in the Priority Queue incorrectly expires 5.5 hours earlier than expected.](https://github.com/code-423n4/2022-10-zksync-findings/issues/259)
 </details>  
+
+### 2022-12-15 connext - [spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/ConnextNxtp-Spearbit-Security-Review.pdf)
+15 Highs
+19 Mediems
+
+
