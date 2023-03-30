@@ -90,7 +90,7 @@ The below table shows known hacks since 2021:
 | 20210702 | [Chainswap](https://docs.chainswap.com/) | $.8M | <details><summary>`require(signatory == signatures[i].signatory, "unauthorized");`</summary>*this shows the misunderstanding of signature verification as both signatory and r,s,v are provided by the user*</detail> | [post-mortem](https://chain-swap.medium.com/chainswap-post-mortem-and-compensation-plan-90cad50898ab) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/Chainswap_exp1.sol) |
 
 # <a name="Confirmed-Bug-Bounties-header">Confirmed Bug Bounties</a>
-===========================
+
 | Date  | Protocol | References | Vuln | Exploit |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 20220919 | [Arbitrum](https://developer.arbitrum.io/)  | [twitter](https://twitter.com/0xriptide/status/1572051111246467074)<br>[medium](https://medium.com/@0xriptide/hackers-in-arbitrums-inbox-ca23272641a2) | <details><summary>`postUpgradeInit` function wipes slots 0,1 & 2 and sets the bridge and allowListEnabled slots to new values — but leaves sequencerInbox and the two booleans set by the intializer modifier empty.</summary>*call the public initialize() function and set our own address as the bridge to accept all incoming ETH deposits … but only because of this gas optimization in the code from a month prior.*</detail> | Once initialized the contact with our own bridge contract address, we can hijack all incoming ETH deposits from users attempting to bridge to Arbitrum via the depositEth() function | 
