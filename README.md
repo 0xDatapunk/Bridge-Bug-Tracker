@@ -19,8 +19,8 @@ If you would like to contribute, there are two ways to do so:
   * https://l2beat.com/scaling/tvl
   * https://entethalliance.org/2023-02-28-state-of-l2-bridges/
 
-# <a name="Talks-header">Different ways to go wrong</a>
-===================
+# <a name="Talks-header">Talks</a>
+
 **EVM-to-EVM Chain Bridges: The Good, the Bad and the Ugly** by Jan Gorzny, quantstamp [video](https://www.youtube.com/watch?v=f4GOa4XwCjY)
 
 **Review of Cross-Chain Bridge Hacks** by Jan Gorzny, quantstamp [video](https://youtu.be/EdH7UaJec3g?t=18280), [slides](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
