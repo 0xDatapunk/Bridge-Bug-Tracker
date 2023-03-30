@@ -1,12 +1,23 @@
-# Compilation of Hacks/Vulns/Audits On Ethereum L2/Bridges
+# L2/Bridges Bug Tracker
 
-The Current State of Layer2/Bridges
-===================
+A community-maintained collection of bugs, vulnerabilities, and exploits in L2/Bridges.
+
+#### Contributing
+If you would like to contribute, there are two ways to do so:
+1. Create a PR, filling in all of the necessary details yourself
+2. Create an issue with a link or description of the bug or common vulnerability. The repo maintainers will then fill out the relevant details in a PR.
+
+# Table of Contents
+#### [The Current State of Layer2/Bridges](#current-state-of-Layer2/Bridges-header)
+#### [Different ways to go wrong](#Different-ways-to-go-wrong-header)
+#### [Talks](#Talks-header)
+# <a name="#current-state-of-Layer2/Bridges-header">The Current State of Layer2/Bridges</a>
+
   * https://l2beat.com/scaling/tvl
   * https://entethalliance.org/2023-02-28-state-of-l2-bridges/
 
-Different ways to go wrong 
-===================
+# <a name="#Different-ways-to-go-wrong-header">Different ways to go wrong</a>
+
 ### from [Quantstamp](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
 <details><summary>The Custodian</summary>
   - Incorrect asset amount released with respect to the burnt tokens<br>
@@ -34,7 +45,7 @@ Different ways to go wrong
   - 51% attack<br>
 </details>
 
-Talks
+# <a name="Talks-header">Different ways to go wrong</a>
 ===================
 **EVM-to-EVM Chain Bridges: The Good, the Bad and the Ugly** by Jan Gorzny, quantstamp [video](https://www.youtube.com/watch?v=f4GOa4XwCjY)
 
