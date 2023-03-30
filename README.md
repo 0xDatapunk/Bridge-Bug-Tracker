@@ -9,14 +9,35 @@ If you would like to contribute, there are two ways to do so:
 
 # Table of Contents
 #### [The Current State of Layer2/Bridges](#current-state-of-Layer2/Bridges-header)
-#### [Different ways to go wrong](#Different-ways-to-go-wrong-header)
 #### [Talks](#Talks-header)
+#### [Different ways to go wrong - A Framework](#Different-ways-to-go-wrong-header)
+#### [Real Hacks Reproduced](#Real-Hacks-Reproduced-header)
+#### [Confirmed Bug Bounties](#Confirmed-Bug-Bounties-header)
+#### [Selected Audits](#Selected-Audits-header)
 # <a name="#current-state-of-Layer2/Bridges-header">The Current State of Layer2/Bridges</a>
 
   * https://l2beat.com/scaling/tvl
   * https://entethalliance.org/2023-02-28-state-of-l2-bridges/
 
-# <a name="#Different-ways-to-go-wrong-header">Different ways to go wrong</a>
+# <a name="Talks-header">Different ways to go wrong</a>
+===================
+**EVM-to-EVM Chain Bridges: The Good, the Bad and the Ugly** by Jan Gorzny, quantstamp [video](https://www.youtube.com/watch?v=f4GOa4XwCjY)
+
+**Review of Cross-Chain Bridge Hacks** by Jan Gorzny, quantstamp [video](https://youtu.be/EdH7UaJec3g?t=18280), [slides](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
+
+**Securing a Cross-Chain Bridge** by Christopher Whinfrey, hop protocol [video](https://youtu.be/umV-wcKlpjg?t=24940), [slides](https://drive.google.com/file/d/1NEhABFJVt6hGGuvRrohbxnWQ442i2DO8/view)
+
+**Pre-Crime: the future of omnichain security** by Ryan Zarick, LayerZero Labs [video](https://youtu.be/umV-wcKlpjg?t=26109), [slides](https://drive.google.com/file/d/1dd6R9LHmZ1At7UxGYbYMwSsu9KDG0sD-/view)
+
+**Breaking down bridge security models** by Layne Haber, Connext [video](https://youtu.be/umV-wcKlpjg?t=26916), [slides](https://drive.google.com/file/d/1nonAR8QKgLWAcPRveADskAejtdiY8D2J/view)
+
+**Breaking bridges** by Yoav Weiss, EF [video](https://youtu.be/umV-wcKlpjg?t=27768), [slides](https://drive.google.com/file/d/1GpSEeFe0xmC4WlOA8mm4JSgRnTEiyiTX/view)
+
+**The Bridge Risk Framework Seminar** by Spearbit, [video](https://www.youtube.com/watch?v=JVNgsmEc5Lk), [blog](https://gov.l2beat.com/t/l2bridge-risk-framework/31)
+
+**Bridge Security** by Spearbit, [intro](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityIntroduction.md), [checklist](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityChecklist.md)
+
+# <a name="#Different-ways-to-go-wrong-header">Different ways to go wrong - A Framework</a>
 
 ### from [Quantstamp](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
 <details><summary>The Custodian</summary>
@@ -45,26 +66,8 @@ If you would like to contribute, there are two ways to do so:
   - 51% attack<br>
 </details>
 
-# <a name="Talks-header">Different ways to go wrong</a>
-===================
-**EVM-to-EVM Chain Bridges: The Good, the Bad and the Ugly** by Jan Gorzny, quantstamp [video](https://www.youtube.com/watch?v=f4GOa4XwCjY)
 
-**Review of Cross-Chain Bridge Hacks** by Jan Gorzny, quantstamp [video](https://youtu.be/EdH7UaJec3g?t=18280), [slides](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
-
-**Securing a Cross-Chain Bridge** by Christopher Whinfrey, hop protocol [video](https://youtu.be/umV-wcKlpjg?t=24940), [slides](https://drive.google.com/file/d/1NEhABFJVt6hGGuvRrohbxnWQ442i2DO8/view)
-
-**Pre-Crime: the future of omnichain security** by Ryan Zarick, LayerZero Labs [video](https://youtu.be/umV-wcKlpjg?t=26109), [slides](https://drive.google.com/file/d/1dd6R9LHmZ1At7UxGYbYMwSsu9KDG0sD-/view)
-
-**Breaking down bridge security models** by Layne Haber, Connext [video](https://youtu.be/umV-wcKlpjg?t=26916), [slides](https://drive.google.com/file/d/1nonAR8QKgLWAcPRveADskAejtdiY8D2J/view)
-
-**Breaking bridges** by Yoav Weiss, EF [video](https://youtu.be/umV-wcKlpjg?t=27768), [slides](https://drive.google.com/file/d/1GpSEeFe0xmC4WlOA8mm4JSgRnTEiyiTX/view)
-
-**The Bridge Risk Framework Seminar** by Spearbit, [video](https://www.youtube.com/watch?v=JVNgsmEc5Lk), [blog](https://gov.l2beat.com/t/l2bridge-risk-framework/31)
-
-**Bridge Security** by Spearbit, [intro](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityIntroduction.md), [checklist](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityChecklist.md)
-
-Hacks Reproduced
-===================
+# <a name="#Real-Hacks-Reproduced-header">Real Hacks Reproduced</a>
 
 The below table shows known hacks since 2021:
 
@@ -84,7 +87,7 @@ The below table shows known hacks since 2021:
 | 20210710 | [Chainswap](https://docs.chainswap.com/) | $4.4M | <details><summary>`require(signatory == signatures[i].signatory, "unauthorized");`</summary>*this shows the misunderstanding of signature verification as both signatory and r,s,v are provided by the user*</detail> | [twitter](https://twitter.com/real_n3o/status/1414071223940571139) <br /> [rekt](https://rekt.news/chainswap-rekt/) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/Chainswap_exp2.sol) |
 | 20210702 | [Chainswap](https://docs.chainswap.com/) | $.8M | <details><summary>`require(signatory == signatures[i].signatory, "unauthorized");`</summary>*this shows the misunderstanding of signature verification as both signatory and r,s,v are provided by the user*</detail> | [post-mortem](https://chain-swap.medium.com/chainswap-post-mortem-and-compensation-plan-90cad50898ab) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/Chainswap_exp1.sol) |
 
-Confirmed Bug Bounties
+# <a name="Confirmed-Bug-Bounties-header">Confirmed Bug Bounties</a>
 ===========================
 | Date  | Protocol | References | Vuln | Exploit |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -92,7 +95,7 @@ Confirmed Bug Bounties
 | 20220607 | [Aurora](https://doc.aurora.dev/) | [blog](https://aurora.dev/blog/aurora-mitigates-its-inflation-vulnerability), [immunefi](https://medium.com/immunefi/aurora-infinite-spend-bugfix-review-6m-payout-e635d24273d#b405), [source](https://github.com/aurora-is-near/aurora-engine/blob/5c8691ea6ea5f1b309ef227f7f5c719ffea45d28/engine-precompiles/src/native.rs#L198), [disclosure](https://app.ardrive.io/#/drives/7ba902d8-d26a-4dad-99b8-807eaaf8d925/folders/c63e6e8b-0d66-4018-b5ac-e93afe948d46) | <details><summary>delegateCall to precompiles</summary>*In the exit to NEAR and exit to Ethereum precompiles, the contract address was hardcoded with disregard to how DelegateCall works. When someone calls the contract it comes from the address of the contract always, and not from the input. Also, since the balance is from the EOA and not the contract, there is no transfer of ETH. This results in the Aurora Engine scheduling a transfer from its NEP-141 ETH balance to the adversary while it has not received an ETH transfer.*</detail> | Instead of removing the hardcoded contract address, given context, it turned out to be better to instead return an exit error if the address given does not match the inputs' address. |
 | 20220202 | [Optimism](https://www.optimism.io/)  | [github](https://github.com/ethereum-optimism/optimism/blob/develop/technical-documents/postmortems/2022-02-02-inflation-vuln.md)<br>[writeup](https://www.saurik.com/optimism.html) | <details><summary>The code for Suicide is directly modifying the stateObject's data.Balance field instead of checking UsingOVM and redirecting that modification to OVM_ETH</summary></details> | Contract balances were improperly zeroed during self-destruction, so that the contract address would still have a balance after it had been self-destructed. This could have enabled an attacker to run a loop which doubled the balance of a contract each time, resulting in massive inflation and issuance directly to the attacker. | 
 
-Selected Audits
+# <a name="Selected-Audits-header">Selected Audits</a>
 ===========================
 ### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
 
