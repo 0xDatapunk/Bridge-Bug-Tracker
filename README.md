@@ -14,6 +14,8 @@ If you would like to contribute, there are two ways to do so:
 #### [Real Hacks Reproduced](#Real-Hacks-Reproduced-header)
 #### [Confirmed Bug Bounties](#Confirmed-Bug-Bounties-header)
 #### [Selected Audits](#Selected-Audits-header)
+
+
 # <a name="#current-state-of-Layer2/Bridges-header">The Current State of Layer2/Bridges</a>
 
   * https://l2beat.com/scaling/tvl
@@ -96,7 +98,7 @@ The below table shows known hacks since 2021:
 | 20220202 | [Optimism](https://www.optimism.io/)  | [github](https://github.com/ethereum-optimism/optimism/blob/develop/technical-documents/postmortems/2022-02-02-inflation-vuln.md)<br>[writeup](https://www.saurik.com/optimism.html) | <details><summary>The code for Suicide is directly modifying the stateObject's data.Balance field instead of checking UsingOVM and redirecting that modification to OVM_ETH</summary></details> | Contract balances were improperly zeroed during self-destruction, so that the contract address would still have a balance after it had been self-destructed. This could have enabled an attacker to run a loop which doubled the balance of a contract each time, resulting in massive inflation and issuance directly to the attacker. | 
 
 # <a name="Selected-Audits-header">Selected Audits</a>
-===========================
+
 ### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
 
 <details><summary>3 Highs </summary>
