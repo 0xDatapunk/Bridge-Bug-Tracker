@@ -2,6 +2,8 @@
 
 A community-maintained collection of bugs, vulnerabilities, and exploits in L2/Bridges.
 
+L2/Bridges are scaling Ethereum. By their nature, they have also become honey pots for exploits, potentially with high severity impact. The Bugs tracker lists frameworks, actual bugs, and selected audits in the hope of making L2/Bridges more secure. These lists can be used as a reference for developers, auditors, and security tool makers.
+
 #### Contributing
 If you would like to contribute, there are two ways to do so:
 1. Create a PR, filling in all of the necessary details yourself
