@@ -1,4 +1,4 @@
-# L2/Bridges Bug Tracker
+# L2/Bridge Bug Tracker
 
 A community-maintained collection of bugs, vulnerabilities, and exploits in L2/Bridges.
 
