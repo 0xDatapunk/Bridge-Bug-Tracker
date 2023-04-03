@@ -1,8 +1,8 @@
-# L2/Bridge Bug Tracker
+# Bridge Bug Tracker
 
-A community-maintained collection of bugs, vulnerabilities, and exploits in L2/Bridges.
+A community-maintained collection of bugs, vulnerabilities, and exploits in cross chain bridges.
 
-L2/Bridges are scaling Ethereum. By their nature, they have also become honey pots for exploits, potentially with high severity impact. This bugs tracker lists frameworks, actual bugs, and selected audits in the hope of making L2/Bridges more secure. These lists can be used as a reference for developers, auditors, and security tool makers.
+Layer 2s, the most popular scaling solution for Ethereum at the moment, would not be possible without bridges. By their nature, bridges have become honey pots for exploits, occasionally with critical severity impact. This repo consolidates past exploited bridge bugs along with various bridge security resources in one place in the hope of making bridges more secure. These resources can be used as a reference for developers, auditors, and security tool makers.
 
 #### Contributing
 If you would like to contribute, there are two ways to do so:
@@ -10,70 +10,16 @@ If you would like to contribute, there are two ways to do so:
 2. Create an issue with a link or description of the bug or common vulnerability. The repo maintainers will then fill out the relevant details in a PR.
 
 # Table of Contents
-#### [The Current State of Layer2/Bridges](#current-state-of-Layer2/Bridges-header)
-#### [Talks](#Talks-header)
-#### [Different ways to go wrong - A Framework](#Different-ways-to-go-wrong-header)
-#### [Real Hacks Reproduced](#Real-Hacks-Reproduced-header)
-#### [Confirmed Bug Bounties](#Confirmed-Bug-Bounties-header)
-#### [Selected Audits](#Selected-Audits-header)
+1. [Exploited Bugs](#exploited-bugs)
+2. [Common Ways to Go Wrong](#common-ways-to-go-wrong)
+3. [Confirmed Bug Bounties](#confirmed-bug-bounties)
+4. [Related Audits](#related-audits)
+5. [Keeping Up with Bridges](#keeping-up-with-bridges)
+6. [Related Talks](#related-talks)
 
+# <a name="#exploited-bugs">Exploited Bugs</a>
 
-# <a name="#current-state-of-Layer2/Bridges-header">The Current State of Layer2/Bridges</a>
-
-  * https://l2beat.com/scaling/tvl
-  * https://entethalliance.org/2023-02-28-state-of-l2-bridges/
-
-# <a name="Talks-header">Talks</a>
-
-**EVM-to-EVM Chain Bridges: The Good, the Bad and the Ugly** by Jan Gorzny, quantstamp [video](https://www.youtube.com/watch?v=f4GOa4XwCjY)
-
-**Review of Cross-Chain Bridge Hacks** by Jan Gorzny, quantstamp [video](https://youtu.be/EdH7UaJec3g?t=18280), [slides](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
-
-**Securing a Cross-Chain Bridge** by Christopher Whinfrey, hop protocol [video](https://youtu.be/umV-wcKlpjg?t=24940), [slides](https://drive.google.com/file/d/1NEhABFJVt6hGGuvRrohbxnWQ442i2DO8/view)
-
-**Pre-Crime: the future of omnichain security** by Ryan Zarick, LayerZero Labs [video](https://youtu.be/umV-wcKlpjg?t=26109), [slides](https://drive.google.com/file/d/1dd6R9LHmZ1At7UxGYbYMwSsu9KDG0sD-/view)
-
-**Breaking down bridge security models** by Layne Haber, Connext [video](https://youtu.be/umV-wcKlpjg?t=26916), [slides](https://drive.google.com/file/d/1nonAR8QKgLWAcPRveADskAejtdiY8D2J/view)
-
-**Breaking bridges** by Yoav Weiss, EF [video](https://youtu.be/umV-wcKlpjg?t=27768), [slides](https://drive.google.com/file/d/1GpSEeFe0xmC4WlOA8mm4JSgRnTEiyiTX/view)
-
-**The Bridge Risk Framework Seminar** by Spearbit, [video](https://www.youtube.com/watch?v=JVNgsmEc5Lk), [blog](https://gov.l2beat.com/t/l2bridge-risk-framework/31)
-
-**Bridge Security** by Spearbit, [intro](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityIntroduction.md), [checklist](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityChecklist.md)
-
-# <a name="#Different-ways-to-go-wrong-header">Different ways to go wrong - A Framework</a>
-
-### from [Quantstamp](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
-<details><summary>The Custodian</summary>
-  - Incorrect asset amount released with respect to the burnt tokens<br>
-  - Assets released despite the debt token has not been burnt<br>
-  - Asset transaction replay for a single burn transaction<br>
-  </details>
-  
-<details><summary>The Debt Issuer</summary>
-  - Incorrect amount of debt issued with respect to the deposited assets<br>
-  - Debt token issued although the actual verification did not take place<br>
-  - Anybody can issue debt tokens<br>
-</details>
-<details><summary>The Communicator</summary>
-  - Issues debt tokens although no assets have been deposited<br>
-  - Issues no debt tokens although assets have been deposited<br>
-  - Accepts fraudulent messages from a fake custodian or a debt issuer<br>
-  - Does not relay messages<br>
-  - The source contract does not emit events upon deposit/withdrawal<br>
-</details>
-<details><summary>The Interface (could be fixed with "revoke approval")</summary>
-  - Deposit from another account<br>
-  - Execute any calls from any contract<br>
-</details>
-<details><summary>The Network</summary>
-  - 51% attack<br>
-</details>
-
-
-# <a name="#Real-Hacks-Reproduced-header">Real Hacks Reproduced</a>
-
-The below table shows known hacks since 2021:
+The below table shows known bridge hacks since 2021. These hacks include exploits on non-layer 2 bridges as well. Non-layer 2 bridges have similar functionality to layer 2 bridges, so these exploits still provide valuable learnings.
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Protocol | Funds At Risk | Root Cause | References | Code to Reproduce |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -91,7 +37,7 @@ The below table shows known hacks since 2021:
 | 2021-07-10 | [Chainswap](https://docs.chainswap.com/) | $4.4M | <details><summary>`require(signatory == signatures[i].signatory, "unauthorized");`</summary>*this shows the misunderstanding of signature verification as both signatory and r,s,v are provided by the user*</detail> | [twitter](https://twitter.com/real_n3o/status/1414071223940571139) <br /> [rekt](https://rekt.news/chainswap-rekt/) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/Chainswap_exp2.sol) |
 | 2021-07-02 | [Chainswap](https://docs.chainswap.com/) | $.8M | <details><summary>`require(signatory == signatures[i].signatory, "unauthorized");`</summary>*this shows the misunderstanding of signature verification as both signatory and r,s,v are provided by the user*</detail> | [post-mortem](https://chain-swap.medium.com/chainswap-post-mortem-and-compensation-plan-90cad50898ab) | [.sol](https://github.com/0xDatapunk/DeFiHackLabs/blob/main/src/test/Chainswap_exp1.sol) |
 
-# <a name="Confirmed-Bug-Bounties-header">Confirmed Bug Bounties</a>
+# <a name="confirmed-bug-bounties">Confirmed Bug Bounties</a>
 
  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Protocol | References | Vuln | Exploit |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -99,7 +45,13 @@ The below table shows known hacks since 2021:
 | 2022-06-07 | [Aurora](https://doc.aurora.dev/) | [blog](https://aurora.dev/blog/aurora-mitigates-its-inflation-vulnerability), [immunefi](https://medium.com/immunefi/aurora-infinite-spend-bugfix-review-6m-payout-e635d24273d#b405), [source](https://github.com/aurora-is-near/aurora-engine/blob/5c8691ea6ea5f1b309ef227f7f5c719ffea45d28/engine-precompiles/src/native.rs#L198), [disclosure](https://app.ardrive.io/#/drives/7ba902d8-d26a-4dad-99b8-807eaaf8d925/folders/c63e6e8b-0d66-4018-b5ac-e93afe948d46) | <details><summary>delegateCall to precompiles</summary>*In the exit to NEAR and exit to Ethereum precompiles, the contract address was hardcoded with disregard to how DelegateCall works. When someone calls the contract it comes from the address of the contract always, and not from the input. Also, since the balance is from the EOA and not the contract, there is no transfer of ETH. This results in the Aurora Engine scheduling a transfer from its NEP-141 ETH balance to the adversary while it has not received an ETH transfer.*</detail> | Instead of removing the hardcoded contract address, given context, it turned out to be better to instead return an exit error if the address given does not match the inputs' address. |
 | 2022-02-02 | [Optimism](https://www.optimism.io/)  | [github](https://github.com/ethereum-optimism/optimism/blob/develop/technical-documents/postmortems/2022-02-02-inflation-vuln.md)<br>[writeup](https://www.saurik.com/optimism.html) | <details><summary>The code for Suicide is directly modifying the stateObject's data.Balance field instead of checking UsingOVM and redirecting that modification to OVM_ETH</summary></details> | Contract balances were improperly zeroed during self-destruction, so that the contract address would still have a balance after it had been self-destructed. This could have enabled an attacker to run a loop which doubled the balance of a contract each time, resulting in massive inflation and issuance directly to the attacker. | 
 
-# <a name="Selected-Audits-header">Selected Audits</a>
+### 2022-05-05 LI.FI - [C4](https://code4rena.com/contests/2022-03-lifi-contest) - [report](https://code4rena.com/reports/2022-03-lifinance)
+2 Highs, 13 Mediums
+  
+### 2021-08-30 Connext - [C4](https://code4rena.com/contests/2021-07-connext-contest) - [report](https://code4rena.com/reports/2021-07-connext)
+5 Highs, 2 Mediums
+
+# <a name="related-audits">Related Audits</a>
 
 ### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
 
@@ -148,8 +100,58 @@ The below table shows known hacks since 2021:
 ### 2022-08-30 Connext - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
 4 Critical, 16 Highs, 20 Mediums
 
-### 2022-05-05 LI.FI - [C4](https://code4rena.com/contests/2022-03-lifi-contest) - [report](https://code4rena.com/reports/2022-03-lifinance)
-2 Highs, 13 Mediums
+# <a name="#common-ways-to-go-wrong">Common Ways to Go Wrong</a>
+
+The following details are from [Quantstamp's Review of Bridge Hacks](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view). There, [Quantstamp](https://quantstamp.com/) provides a useful framework for analysing the security of a cross chain bridge. The framework focuses on the 5 different attack surfaces of the bridge:
+
+<details><summary>1. The Custodian</summary>
+  - Incorrect asset amount released with respect to the burnt tokens<br>
+  - Assets released despite the debt token has not been burnt<br>
+  - Asset transaction replay for a single burn transaction<br>
+  </details> 
+<details><summary>2. The Debt Issuer</summary>
+  - Incorrect amount of debt issued with respect to the deposited assets<br>
+  - Debt token issued although the actual verification did not take place<br>
+  - Anybody can issue debt tokens<br>
+</details>
+<details><summary>3. The Communicator</summary>
+  - Issues debt tokens although no assets have been deposited<br>
+  - Issues no debt tokens although assets have been deposited<br>
+  - Accepts fraudulent messages from a fake custodian or a debt issuer<br>
+  - Does not relay messages<br>
+  - The source contract does not emit events upon deposit/withdrawal<br>
+</details>
+<details><summary>4. The Interface (could be fixed with "revoke approval")</summary>
+  - Deposit from another account<br>
+  - Execute any calls from any contract<br>
+</details>
+<details><summary>5. The Network</summary>
+  - 51% attack<br>
+</details>
+
+# <a name="#keeping-up-with-bridges">Keeping Up with Bridges</a>
+
+For keeping up to date with the various layer 2 bridges (note: this doesn't include all cross-chain bridges), L2Beat provides a great overview. Their section for the most popular [bridges](https://l2beat.com/bridges/tvl) outlines the risk analysis, technology used, and the addresses of the involved smart contracts. 
+
+Another great resource for analyzing bridges is ["The Current State of Layer 2 Bridges"](https://entethalliance.org/2023-02-28-state-of-l2-bridges/) article by Dr. Andreas Freund. It provides a good summary on what bridges are, why they're important, and the most popular ones in production.
   
-### 2021-08-30 Connext - [C4](https://code4rena.com/contests/2021-07-connext-contest) - [report](https://code4rena.com/reports/2021-07-connext)
-5 Highs, 2 Mediums
+# <a name="related-talks">Related Talks</a>
+
+Given the amount of money stolen in bridge hacks, it's not surprising that there are a good amount of resources out there dedicated to bridge security. Here are some great related talks to watch:
+
+* **EVM-to-EVM Chain Bridges: The Good, the Bad and the Ugly** by Jan Gorzny, quantstamp [video](https://www.youtube.com/watch?v=f4GOa4XwCjY)
+
+* **Review of Cross-Chain Bridge Hacks** by Jan Gorzny, quantstamp [video](https://youtu.be/EdH7UaJec3g?t=18280), [slides](https://drive.google.com/file/d/1N_BWDDm1YELMkD5WZEEFQ0sD2opAkCgn/view)
+
+* **Securing a Cross-Chain Bridge** by Christopher Whinfrey, hop protocol [video](https://youtu.be/umV-wcKlpjg?t=24940), [slides](https://drive.google.com/file/d/1NEhABFJVt6hGGuvRrohbxnWQ442i2DO8/view)
+
+* **Pre-Crime: the future of omnichain security** by Ryan Zarick, LayerZero Labs [video](https://youtu.be/umV-wcKlpjg?t=26109), [slides](https://drive.google.com/file/d/1dd6R9LHmZ1At7UxGYbYMwSsu9KDG0sD-/view)
+
+* **Breaking down bridge security models** by Layne Haber, Connext [video](https://youtu.be/umV-wcKlpjg?t=26916), [slides](https://drive.google.com/file/d/1nonAR8QKgLWAcPRveADskAejtdiY8D2J/view)
+
+* **Breaking bridges** by Yoav Weiss, EF [video](https://youtu.be/umV-wcKlpjg?t=27768), [slides](https://drive.google.com/file/d/1GpSEeFe0xmC4WlOA8mm4JSgRnTEiyiTX/view)
+
+* **The Bridge Risk Framework Seminar** by Spearbit, [video](https://www.youtube.com/watch?v=JVNgsmEc5Lk), [blog](https://gov.l2beat.com/t/l2bridge-risk-framework/31)
+
+* **Bridge Security** by Spearbit, [intro](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityIntroduction.md), [checklist](https://github.com/spearbit/portfolio/blob/master/content/bridges/BridgeSecurityChecklist.md)
+
