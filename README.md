@@ -11,9 +11,9 @@ If you would like to contribute, there are two ways to do so:
 
 # Table of Contents
 1. [Exploited Bugs](#exploited-bugs)
-2. [Common Ways to Go Wrong](#common-ways-to-go-wrong)
-3. [Confirmed Bug Bounties](#confirmed-bug-bounties)
-4. [Related Audits](#related-audits)
+2. [Confirmed Bug Bounties](#confirmed-bug-bounties)
+3. [Related Audits](#related-audits)
+4. [Common Ways to Go Wrong](#common-ways-to-go-wrong)
 5. [Keeping Up with Bridges](#keeping-up-with-bridges)
 6. [Related Talks](#related-talks)
 
