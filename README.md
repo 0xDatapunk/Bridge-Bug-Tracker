@@ -85,7 +85,8 @@ The below table shows known bridge hacks since 2021. These hacks include exploit
 ### 2022-10-18 LI.FI - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/LIFI-Spearbit-Security-Review.pdf)
 8 Highs, 19 Mediums  
   
-### 2022-10-17 Connext Amarok - [C4](https://code4rena.com/contests/2022-06-connext-amarok-contest) - [report](https://code4rena.com/reports/2022-06-connext)  
+### 2022-10-17 Connext Amarok - [C4](https://code4rena.com/contests/2022-06-connext-amarok-contest) - [report](https://code4rena.com/reports/2022-06-connext)
+6 Highs, 20 Mediums
   
   
 ### 2022-10-04 optimismDrippie - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
