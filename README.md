@@ -47,7 +47,13 @@ The below table shows known bridge hacks since 2021. These hacks include exploit
 
 # <a name="related-audits">Related Audits</a>
 
-### 2023-02-06 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63) - [report](https://app.sherlock.xyz/audits/contests/38)
+### 2023-03 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/63)
+
+<summary>3 Highs </summary>
+<summary>8 Mediums </summary>
+<summary>10 Lows </summary>
+ 
+ ### 2023-01 Optimism Bedrock - [Sherlock](https://app.sherlock.xyz/audits/contests/38)
 
 <details><summary>3 Highs </summary>
   
