@@ -96,7 +96,7 @@ The below table shows known bridge hacks since 2021. These hacks include exploit
 6 Highs, 20 Mediums
   
   
-### 2022-10-04 optimismDrippie - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
+### 2022-10-04 optimismDrippie - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/OptimismDrippie-Spearbit-Security-Review.pdf)
 1 Medium
   
 ### 2022-08-30 Connext - [Spearbit](https://github.com/spearbit/portfolio/blob/master/pdfs/Connext-Spearbit-Security-Review.pdf)
